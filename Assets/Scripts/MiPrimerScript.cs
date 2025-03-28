@@ -29,13 +29,13 @@ con líneas*/
     void Start()
     {
       //this.GetComponent<Transform>().position = posInicial; es igual como está abajo
-      transform.position = posInicial;
+     /* transform.position = posInicial;
 
       this.GetComponent<SpriteRenderer>().flipX = true;
-    
+    */
     }
 
-    // Update is called once per frame
+    // Update is called once per frame*/
     void Update()
     {
         if(Input.GetKey(KeyCode.A)){ //Ir a la izquierda
@@ -53,7 +53,7 @@ con líneas*/
       // int suma = Sumar(numero1,numero2);
    // Debug.Log("La suma es "+ suma);
 
-     //  this.GetComponent<SpriteRenderer>().color = miColor;
+     // this.GetComponent<SpriteRenderer>().color = miColor;
 
     // transform.Translate(velocidad, 0, 0);
      //transform.rotation = Quaternion.Euler (0,0,5); por ejemplo
@@ -69,7 +69,7 @@ con líneas*/
 
 
 
- }*/
+ }
 
     
 }
@@ -78,10 +78,10 @@ con líneas*/
     
     
 
-   /*void onGUI(){
+    void onGUI(){
         if(Event.current.isMouse && Event.current.button == 0){
         Debug.Log(Event.current.type.ToString()); 
         }
-
-}*/
+*/
+}
 }
