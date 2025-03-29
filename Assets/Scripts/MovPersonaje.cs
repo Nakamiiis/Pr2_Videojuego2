@@ -24,14 +24,28 @@ public class MovPersonaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+    //Movimiento personaje
       float MovTeclas = Input.GetAxis("Horizontal"); //Registro teclas a y d para moverse en eje x hasta -1f y 1f
       //float MovTeclasY = Input.GetAxis("Vertical"); para moverse en eje y
 
       float miDeltaTime = Time.deltaTime; //Regular frames con movimiento
 
-      //Movimiento personaje
       rb.velocity = new Vector2(MovTeclas*Multiplicador, rb.velocity.y);
+     
+
+      //Flip
+      if(MovTeclas < 0){
+        this.GetComponent<SpriteRenderer>().flipX = true;
+      }else if(MovTeclas > 0){
+        this.GetComponent<SpriteRenderer>().flipX = false;
+      }
+
+//Otra manera: transform.localScale = new Vector3(-1,1,1);  (X = -1 <- / x = 1 -> )
+         //A esta manera puedes poner localScale.x*-1 o 1 para que puedas escalarlo sin afectar el flip (y-z ->localScale.y o z)
+
+
+
+    //SAlto personaje
       RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
         //Debug.DrawRay(transform.position, Vector2.down, Color.black);
 

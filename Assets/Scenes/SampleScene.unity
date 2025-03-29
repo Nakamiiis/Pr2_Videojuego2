@@ -1821,8 +1821,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1fdbc04986d4849ad18ef2c94dcc68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Multiplicador: 5
-  MultiplicadorSalto: 5
+  Multiplicador: 4
+  MultiplicadorSalto: 6
 --- !u!1 &1241903387
 GameObject:
   m_ObjectHideFlags: 0
