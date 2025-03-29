@@ -1699,7 +1699,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 3d20f536fa23b0c4a95e0cb9c45061c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1822,6 +1822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplicador: 5
+  MultiplicadorSalto: 5
 --- !u!1 &1241903387
 GameObject:
   m_ObjectHideFlags: 0
