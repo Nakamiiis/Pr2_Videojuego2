@@ -15,6 +15,8 @@ public class MovPersonaje : MonoBehaviour
 
     private Animator animatorController;
 
+    private GameObject respawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,10 @@ public class MovPersonaje : MonoBehaviour
 
         animatorController = this.GetComponent<Animator>();
 
-        transform.position = new Vector3(-4.48f,1.53f,0);
+        
+        respawn = GameObject.Find("respawn");
+        
+        Respawnear();
 
     }
 
@@ -79,10 +84,23 @@ public class MovPersonaje : MonoBehaviour
        // PuedoSaltar = false;
       }
 
+    //Comprobar salida por abajo del mapa
+      if(transform.position.y <= -7){
+        Respawnear();
+        }
 
     }
 
 
+  public void Respawnear(){
+    
+    Debug.Log("Vidas: "+GameManager.vidas);
+    GameManager.vidas = GameManager.vidas - 1;
+    Debug.Log("Vidas: "+GameManager.vidas);
+
+    transform.position = respawn.transform.position;
+
+  }
 
 
   
