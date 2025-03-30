@@ -13,11 +13,16 @@ public class MovPersonaje : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private Animator animatorController;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
+        animatorController = this.GetComponent<Animator>();
+
+        transform.position = new Vector3(-4.48f,1.53f,0);
 
     }
 
@@ -42,6 +47,14 @@ public class MovPersonaje : MonoBehaviour
 
 //Otra manera: transform.localScale = new Vector3(-1,1,1);  (X = -1 <- / x = 1 -> )
          //A esta manera puedes poner localScale.x*-1 o 1 para que puedas escalarlo sin afectar el flip (y-z ->localScale.y o z)
+
+
+    //AnimaciónWalking
+      if(MovTeclas != 0){
+        animatorController.SetBool("activaCamina",true);
+        }else{ 
+          animatorController.SetBool("activaCamina",false);
+        }
 
 
 
