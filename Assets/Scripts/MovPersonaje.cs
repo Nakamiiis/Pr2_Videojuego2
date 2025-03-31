@@ -17,6 +17,7 @@ public class MovPersonaje : MonoBehaviour
 
     private GameObject respawn;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +28,15 @@ public class MovPersonaje : MonoBehaviour
         
         respawn = GameObject.Find("respawn");
         
-        Respawnear();
-
+       transform.position = respawn.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+    //Si estoy muerto el resto de código se ignora, no me puedo mover
+    if(GameManager.iAmDead) return;
+    
     //Movimiento personaje
       float MovTeclas = Input.GetAxis("Horizontal"); //Registro teclas a y d para moverse en eje x hasta -1f y 1f
       //float MovTeclasY = Input.GetAxis("Vertical"); para moverse en eje y
@@ -88,6 +91,13 @@ public class MovPersonaje : MonoBehaviour
       if(transform.position.y <= -7){
         Respawnear();
         }
+
+    //0 vidas
+      if(GameManager.vidas <= 0){
+          GameManager.iAmDead = true;
+        }
+
+
 
     }
 
