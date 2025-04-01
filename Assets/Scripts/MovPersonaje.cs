@@ -68,7 +68,7 @@ public class MovPersonaje : MonoBehaviour
 
     //SAlto personaje
       RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
-        //Debug.DrawRay(transform.position, Vector2.down, Color.black);
+        //Debug.DrawRay(transform.position, Vector2.down, Color.black); Así se puede ver el rayo
 
       if(hit){
         PuedoSaltar = true;
@@ -80,10 +80,7 @@ public class MovPersonaje : MonoBehaviour
 
       //Para saltar y poner límite a cantidad saltos
       if(Input.GetKeyDown(KeyCode.Space) && PuedoSaltar){
-        rb.AddForce(
-          new Vector2(0,MultiplicadorSalto),
-          ForceMode2D.Impulse
-        );
+        rb.AddForce(new Vector2(0,MultiplicadorSalto),ForceMode2D.Impulse);
        // PuedoSaltar = false;
       }
 
@@ -104,7 +101,7 @@ public class MovPersonaje : MonoBehaviour
 
   public void Respawnear(){
     
-    Debug.Log("Vidas: "+GameManager.vidas);
+    //Debug.Log("Vidas: "+GameManager.vidas);
     GameManager.vidas = GameManager.vidas - 1;
     Debug.Log("Vidas: "+GameManager.vidas);
 
@@ -131,6 +128,12 @@ public class MovPersonaje : MonoBehaviour
         0,
         0
        );*/
+
+//Manera de movimiento en clase
+/*float.MovTeclas = Input.GetAxis("Horizontal");
+  float MultiplicadorFinal = (Multiplicador*MovTeclas*Time.deltatime);
+  transform-Translate(MultiplicadorFinal, 0f, 0f);
+*/
 
 
 
