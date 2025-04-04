@@ -17,6 +17,8 @@ public class MovPersonaje : MonoBehaviour
 
     private GameObject respawn;
 
+    public bool direcciónBalaDcha = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,8 +51,10 @@ public class MovPersonaje : MonoBehaviour
       //Flip
       if(MovTeclas < 0){
         this.GetComponent<SpriteRenderer>().flipX = true;
+        direcciónBalaDcha = false;
       }else if(MovTeclas > 0){
         this.GetComponent<SpriteRenderer>().flipX = false;
+        direcciónBalaDcha = true;
       }
 
 //Otra manera: transform.localScale = new Vector3(-1,1,1);  (X = -1 <- / x = 1 -> )

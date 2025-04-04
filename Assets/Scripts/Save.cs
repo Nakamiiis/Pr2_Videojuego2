@@ -8,10 +8,12 @@ public class Save : MonoBehaviour
 
 GameObject Respawn;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+      Respawn = GameObject.Find("respawn");
+
     }
 
     // Update is called once per frame
@@ -22,20 +24,15 @@ GameObject Respawn;
 
     }
 
-    /*void OnTriggerEnter2D(Collider2D col){
-        Debug.Log(col.name);
+    void OnTriggerEnter2D(Collider2D col){
+        
+        Respawn.transform.position = transform.position;
+        GameManager.vidas = GameManager.vidas + 1;
+         Debug.Log("Vidas: "+GameManager.vidas);
 
-        if(col.name == "Rogue"){
-             Respawn.trasnform.positions = Save.transform.postion;
-        } 
-
+        Destroy(this.gameObject); 
+        
     }
 
-    public void Respawnear(){
-    
-    //Debug.Log("Vidas: "+GameManager.vidas);
-    GameManager.vidas = GameManager.vidas + 1;
-    Debug.Log("Vidas: "+GameManager.vidas);
-
-  }*/
+  
 }
