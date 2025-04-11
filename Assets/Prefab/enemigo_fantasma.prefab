@@ -99,6 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6f79ab819a24743b93df131831eb97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaFantasma: 5
+  velocidad: 2
+  limitDerecha: 5
+  limitIzquierda: 5
 --- !u!70 &323076939096628143
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
