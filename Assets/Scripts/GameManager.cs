@@ -11,6 +11,8 @@ public static int marcador = 0;
 
 public static bool iAmDead = false;
 
+public static int muertes = 0;
+
 
 
     // Start is called before the first frame update

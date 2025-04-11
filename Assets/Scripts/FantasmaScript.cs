@@ -32,6 +32,7 @@ public class FantasmaScript : MonoBehaviour
     private MovPersonaje respawn;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +43,6 @@ public class FantasmaScript : MonoBehaviour
         player = GameObject.FindWithTag("Player");
 
         respawn = player.GetComponent<MovPersonaje>();
-         
 
 
     }
@@ -51,42 +51,44 @@ public class FantasmaScript : MonoBehaviour
     void Update()
     {
 
-         distancia = Vector3.Distance(transform.position, player.transform.position);
+        distancia = Vector3.Distance(transform.position, player.transform.position);
 
         if (distancia <= distanciaAtaque)
         {
             estadoFantasma = "Ataque";
-            }
+        }
 
         if (distancia >= distanciaPatrol)
         {
             estadoFantasma = "Patrol";
-            }      
+        }
 
-      
-      //ATAQUE
-        if(estadoFantasma == "Ataque"){
-             transform.position = Vector3.MoveTowards(
-                transform.position, player.transform.position, velocidadAtaque*Time.deltaTime
+
+        //ATAQUE
+        if (estadoFantasma == "Ataque")
+        {
+                transform.position = Vector3.MoveTowards(
+                transform.position, player.transform.position, velocidadAtaque * Time.deltaTime
                 );
-             
-            if(player.transform.position.x <= transform.position.x){
-                this.GetComponent<SpriteRenderer>().flipX = false;
-            }else{
-                this.GetComponent<SpriteRenderer>().flipX = true;
-                }
-            
-             }
+            }
+           
+         if(player.transform.position.x <= transform.position.x){
+                    this.GetComponent<SpriteRenderer>().flipX = false;
+                }else{
+                    this.GetComponent<SpriteRenderer>().flipX = true;
+        }
 
 
 
-    //PATROL
+        //PATROL
         if (estadoFantasma == "Patrol")
         {
+            //transform.position = Vector3.MoveTowards(transform.position, posInicial, velocidad * Time.deltaTime);
 
             if (vidaFantasma <= 0)
             {
                 Destroy(this.gameObject);
+                GameManager.muertes += 1;
             }
             //Fantasma hacia derecha
             if (direcFantasmaDerecha == true)
@@ -120,17 +122,17 @@ public class FantasmaScript : MonoBehaviour
         }
 
 
-        //Debug.Log(distancia + "***"+estadoFantasma);
+                //Debug.Log(distancia + "***"+estadoFantasma);
 
+            
     }
+            void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                //GameManager.vidas -=1;
+                respawn.Respawnear();
+            }
 
-    void OnCollisionEnter2D (Collision2D collision)
-    { 
-        if(collision.gameObject.tag == "Player"){
-            //GameManager.vidas -=1;
-            respawn.Respawnear();
         }
-
-    }
-
 }
