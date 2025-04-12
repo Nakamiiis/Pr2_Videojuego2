@@ -5,11 +5,14 @@ using UnityEngine;
 public class MovPersonaje : MonoBehaviour
 {
 
+    float MovTeclas;
     public float Multiplicador = 5f;
 
     public float MultiplicadorSalto = 5f;
 
     private bool PuedoSaltar = true;
+    private bool activaSaltoFixed = false;
+
 
     private Rigidbody2D rb;
 
@@ -40,13 +43,12 @@ public class MovPersonaje : MonoBehaviour
     if(GameManager.iAmDead) return;
     
     //Movimiento personaje
-      float MovTeclas = Input.GetAxis("Horizontal"); //Registro teclas a y d para moverse en eje x hasta -1f y 1f
+      MovTeclas = Input.GetAxis("Horizontal"); //Registro teclas a y d para moverse en eje x hasta -1f y 1f
       //float MovTeclasY = Input.GetAxis("Vertical"); para moverse en eje y
 
       float miDeltaTime = Time.deltaTime; //Regular frames con movimiento
 
-      rb.velocity = new Vector2(MovTeclas*Multiplicador, rb.velocity.y);
-     
+      
 
       //Flip
       if(MovTeclas < 0){
@@ -84,7 +86,8 @@ public class MovPersonaje : MonoBehaviour
 
       //Para saltar y poner límite a cantidad saltos
       if(Input.GetKeyDown(KeyCode.Space) && PuedoSaltar){
-        rb.AddForce(new Vector2(0,MultiplicadorSalto),ForceMode2D.Impulse);
+        activaSaltoFixed = true;
+        //rb.AddForce(new Vector2(0,MultiplicadorSalto),ForceMode2D.Impulse); esto lo movemos al fixed
        // PuedoSaltar = false;
       }
 
@@ -101,6 +104,18 @@ public class MovPersonaje : MonoBehaviour
 
 
     }
+
+    void FixedUpdate()
+        {
+          rb.velocity = new Vector2(MovTeclas*Multiplicador, rb.velocity.y);
+
+
+        if(activaSaltoFixed == true){
+          rb.AddForce(new Vector2(0,MultiplicadorSalto),ForceMode2D.Impulse);
+          activaSaltoFixed = false;
+        }
+        }
+
 
 
   public void Respawnear(){

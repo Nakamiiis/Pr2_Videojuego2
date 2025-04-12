@@ -565,11 +565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2807932958043134317, guid: 8f701631c3f113844b084edf77013f9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.515266
+      value: 8.37
       objectReference: {fileID: 0}
     - target: {fileID: 2807932958043134317, guid: 8f701631c3f113844b084edf77013f9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9149661
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2807932958043134317, guid: 8f701631c3f113844b084edf77013f9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c310dee572a5248a5770d2a051e02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadParallax: 1
+  velocidadParallax: 3
 --- !u!4 &235317502
 Transform:
   m_ObjectHideFlags: 0
@@ -3085,11 +3085,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4752942956261111440, guid: 90c72d6e4508c524390ddff9fe33d28d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.592555
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 4752942956261111440, guid: 90c72d6e4508c524390ddff9fe33d28d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55418146
+      value: -4.37
       objectReference: {fileID: 0}
     - target: {fileID: 4752942956261111440, guid: 90c72d6e4508c524390ddff9fe33d28d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3292,9 +3292,10 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3451,6 +3452,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c310dee572a5248a5770d2a051e02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadParallax: 1
 --- !u!1 &552174770
 GameObject:
   m_ObjectHideFlags: 0
@@ -6231,7 +6245,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d0b43200889b1f947866417d5404f93c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7024,6 +7038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1714885113}
+  - component: {fileID: 1714885114}
   m_Layer: 0
   m_Name: FondoNubesLejanas
   m_TagString: Untagged
@@ -7048,6 +7063,19 @@ Transform:
   - {fileID: 1565328523}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714885114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714885112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c310dee572a5248a5770d2a051e02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadParallax: 1
 --- !u!1 &1766626876
 GameObject:
   m_ObjectHideFlags: 0
@@ -7414,6 +7442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1902797398}
+  - component: {fileID: 1902797399}
   m_Layer: 0
   m_Name: FondoNuber
   m_TagString: Untagged
@@ -7439,6 +7468,19 @@ Transform:
   - {fileID: 797705554}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1902797399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902797397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c310dee572a5248a5770d2a051e02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadParallax: 2
 --- !u!1 &1938045159
 GameObject:
   m_ObjectHideFlags: 0
@@ -7452,7 +7494,7 @@ GameObject:
   - component: {fileID: 1938045162}
   m_Layer: 0
   m_Name: Virtual Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
