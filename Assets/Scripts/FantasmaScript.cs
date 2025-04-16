@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FantasmaScript : MonoBehaviour
@@ -31,6 +32,8 @@ public class FantasmaScript : MonoBehaviour
 
     private MovPersonaje respawn;
 
+    AudioSource fantasmaAudioManager;
+
 
 
     // Start is called before the first frame update
@@ -43,6 +46,9 @@ public class FantasmaScript : MonoBehaviour
         player = GameObject.FindWithTag("Player");
 
         respawn = player.GetComponent<MovPersonaje>();
+
+        fantasmaAudioManager = this.GetComponent<AudioSource>();
+        //fantasmaAudioManager.PlayOneShot(AudioManager.Instance.sonidoFantasma);
 
 
     }
@@ -70,6 +76,14 @@ public class FantasmaScript : MonoBehaviour
                 transform.position = Vector3.MoveTowards(
                 transform.position, player.transform.position, velocidadAtaque * Time.deltaTime
                 );
+                
+               if(fantasmaAudioManager.isPlaying == false){
+            
+                fantasmaAudioManager.PlayOneShot(AudioManager.Instance.sonidoFantasma);
+            }
+
+               // if(fantasmaAudioManager.PlayOneShot(AudioManager.Instance.sonidoFantasma) == false) {}
+             
             }
            
          if(player.transform.position.x <= transform.position.x){
@@ -132,6 +146,8 @@ public class FantasmaScript : MonoBehaviour
             {
                 //GameManager.vidas -=1;
                 respawn.Respawnear();
+
+                //AudioManager.Instance.SuenaClip(AudioManager.Instance.sonidoFantasma);
             }
 
         }
