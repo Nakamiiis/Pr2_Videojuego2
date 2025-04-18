@@ -26,11 +26,14 @@ GameObject Respawn;
 
     void OnTriggerEnter2D(Collider2D col){
         
+        if(col.tag == "Player")
+        {
         Respawn.transform.position = transform.position;
         GameManager.vidas = GameManager.vidas + 1;
          Debug.Log("Vidas: "+GameManager.vidas);
 
         Destroy(this.gameObject); 
+        }
         
     }
 

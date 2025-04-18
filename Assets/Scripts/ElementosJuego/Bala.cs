@@ -36,7 +36,6 @@ public class Bala : MonoBehaviour
 
          Destroy(this.gameObject, 7.0f);
 
-
     }
 
 void OnTriggerEnter2D(Collider2D col){

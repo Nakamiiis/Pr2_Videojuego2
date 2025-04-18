@@ -48,7 +48,7 @@ public class InicioScript : MonoBehaviour
 
     public void SuenaBoton()
     {
-        audioManagerScript.miAudioSource.PlayOneShot(audioManagerScript.sonidoMoneda);
+        audioManagerScript.miAudioSource.PlayOneShot(audioManagerScript.sonidoBoton);
     }
 
     public void InicioExit() 

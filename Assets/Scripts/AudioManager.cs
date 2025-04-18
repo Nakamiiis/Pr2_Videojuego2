@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip sonidoFantasma;
 
-    public AudioClip sonidoBotón;
+    public AudioClip sonidoBoton;
 
     public static AudioManager Instance; //para llamarlo desed cualquier lugar, solo habrá 1
 
