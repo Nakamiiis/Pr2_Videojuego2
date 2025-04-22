@@ -122,7 +122,7 @@ public class MovPersonaje : MonoBehaviour
     
     //Debug.Log("Vidas: "+GameManager.vidas);
     GameManager.vidas = GameManager.vidas - 1;
-    Debug.Log("Vidas: "+GameManager.vidas);
+    //Debug.Log("Vidas: "+GameManager.vidas);
 
     transform.position = respawn.transform.position;
 
