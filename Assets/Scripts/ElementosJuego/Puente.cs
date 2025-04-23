@@ -4,34 +4,37 @@ using UnityEngine;
 
 public class Puente : MonoBehaviour
 {
-    private bool soyTransparente = false;
+    //private bool soyTransparente = false;
 
-
+     private Animator animatorController;
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        animatorController = this.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       /*if(soyTransparente == true){
+      /*if(soyTransparente == true){
         this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 0);
         }else{
         soyTransparente = false;
-        this.gameObject.GetComponent<SpriteRenderer>().color = (255, 255, 255, 255);
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         }*/
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+   void OnCollisionEnter2D(Collision2D collision)
         { //Debug.Log(collision.gameObject.tag == "Player");
             if (collision.gameObject.tag == "Player")
                 { 
-                    this.gameObject.SetActive(false);
-                }else{  
-                    this.gameObject.SetActive(true);
+                    animatorController.SetBool("avisoCaida", true);
+                    Destroy(this.gameObject, 3.0f);
+                }
+            else{  
+                animatorController.SetBool("avisoCaida", false);
                 }
                
         }
