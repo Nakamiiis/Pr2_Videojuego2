@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class LeonSabio : MonoBehaviour
 {
-    GameObject PanelLeon;
+    public Canvas CanvasLeon;  
 
     // Start is called before the first frame update
     void Start()
     {
-      PanelLeon = GameObject.Find("PanelLeon");
-        //PanelLeon.SetActive(false);
+    
+      
     }
 
     // Update is called once per frame
@@ -20,10 +20,18 @@ public class LeonSabio : MonoBehaviour
 
 
     }
+
 void OnTriggerEnter2D(Collider2D col){
     if(col.gameObject.name.StartsWith("Rogue")){
-        PanelLeon.SetActive(true);
-        //Debug.Log("ola soy el león sabio");
+         CanvasLeon.GetComponent<Canvas>().enabled = true;
+         //Debug.Log("ola soy el león sabio");
      }
 }
+void OnTriggerExit2D(Collider2D col){
+    if(col.gameObject.name.StartsWith("Rogue")){
+          CanvasLeon.GetComponent<Canvas>().enabled = false;
+         //Debug.Log("ola soy el león sabio");
+     }
+}
+
 }
