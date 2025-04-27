@@ -9,7 +9,7 @@ public class LeonSabio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+         CanvasLeon.GetComponent<Canvas>().enabled = false;
       
     }
 
@@ -29,7 +29,7 @@ void OnTriggerEnter2D(Collider2D col){
 }
 void OnTriggerExit2D(Collider2D col){
     if(col.gameObject.name.StartsWith("Rogue")){
-          CanvasLeon.GetComponent<Canvas>().enabled = false;
+        CanvasLeon.GetComponent<Canvas>().enabled = false;
          //Debug.Log("ola soy el león sabio");
      }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovPersonaje : MonoBehaviour
 {
@@ -40,7 +41,12 @@ public class MovPersonaje : MonoBehaviour
     void Update()
     {
     //Si estoy muerto el resto de código se ignora, no me puedo mover
-    if(GameManager.iAmDead) return;
+    if(GameManager.iAmDead)
+    { 
+      //return;
+      AudioManager.Instance.SuenaClip(AudioManager.Instance.sonidoMuerte);
+      SceneManager.LoadScene("GameOver");
+    }
     
     //Movimiento personaje
       MovTeclas = Input.GetAxis("Horizontal"); //Registro teclas a y d para moverse en eje x hasta -1f y 1f

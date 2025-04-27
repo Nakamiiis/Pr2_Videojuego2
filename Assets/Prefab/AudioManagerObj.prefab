@@ -49,7 +49,9 @@ MonoBehaviour:
   bandaSonora: {fileID: 8300000, guid: 2300be938f6613c4498cafbef196f773, type: 3}
   sonidoMoneda: {fileID: 8300000, guid: 29986b08ce18e9842b84420bdd7d5817, type: 3}
   sonidoFantasma: {fileID: 8300000, guid: a80feb5b8790f514ba8a780df182f53a, type: 3}
-  "sonidoBot\xF3n": {fileID: 8300000, guid: 29986b08ce18e9842b84420bdd7d5817, type: 3}
+  sonidoBoton: {fileID: 8300000, guid: 29986b08ce18e9842b84420bdd7d5817, type: 3}
+  sonidoMuerte: {fileID: 8300000, guid: 3dbb7bc5904d1444d8d462cf948a3b19, type: 3}
+  sonidoFuego: {fileID: 8300000, guid: 52a30874a7cc4d2428c90ca25f1965de, type: 3}
 --- !u!82 &7921787374715301785
 AudioSource:
   m_ObjectHideFlags: 0

@@ -13,6 +13,10 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip sonidoBoton;
 
+    public AudioClip sonidoMuerte;
+
+    public AudioClip sonidoFuego;
+
     public static AudioManager Instance; //para llamarlo desed cualquier lugar, solo habrá 1
 
     void Awake() 

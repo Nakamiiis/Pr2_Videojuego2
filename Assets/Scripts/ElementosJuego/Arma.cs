@@ -20,6 +20,7 @@ public GameObject bala;
         //Disparación
        if(Input.GetKeyDown(KeyCode.E)){
         Instantiate(bala, transform.position, Quaternion.identity);
+        AudioManager.Instance.SuenaClip(AudioManager.Instance.sonidoFuego);
      
       }
 
