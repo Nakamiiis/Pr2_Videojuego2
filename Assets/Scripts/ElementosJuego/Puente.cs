@@ -47,7 +47,8 @@ public class Puente : MonoBehaviour
 
 
 
-//PRIMER INTENTO---Los else no se activaban así que no se recuperaba el puente
+//PRIMER INTENTO---Los else no se activaban así que no se recuperaba el puente, haciendo el león sabio más tarde descubrí que en vez de else
+//tenía que usar el OnCollisionExit2D para pasará lo que quería. Igualmente decidí dejar el puente de solo una vez porque me parecía interesante :>
    
      /*void OnCollisionEnter2D(Collision2D collision)
         { //Debug.Log(collision.gameObject.tag == "Player");
